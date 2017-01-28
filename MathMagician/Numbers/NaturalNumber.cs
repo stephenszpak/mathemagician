@@ -9,12 +9,14 @@ namespace MathMagician.Numbers
     public class NaturalNumber : Integer
     {
         //private makes it where you can't access outside of the class
-        private int First { get; set; }
+        protected int First { get; set; }
+        protected int Step { get; set; }
 
         //constructors do not have return types and have to be public
         public NaturalNumber()
         {
-            this.First = 1;
+            First = 1;
+            Step = 1;
         } 
 
         public int GetFirst()
@@ -26,7 +28,7 @@ namespace MathMagician.Numbers
         {
             //'current' argument is read-only
         
-            return current + 1;
+            return current + Step;
         }
 
         public int[] GetSequence(int howMany)
