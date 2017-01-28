@@ -15,7 +15,7 @@ namespace MathMagician.Numbers
         public NaturalNumber()
         {
             this.First = 1;
-        }
+        } 
 
         public int GetFirst()
         {
@@ -24,15 +24,22 @@ namespace MathMagician.Numbers
 
         public int GetNext(int current)
         {
-            throw new NotImplementedException();
+            current = current + 1;
+            return current;
         }
 
-        public int[] GetSequence(int how_many)
+        public int[] GetSequence(int howMany)
         {
-            throw new NotImplementedException();
+            int[] sequenceArray = new int[howMany];
+
+            for (int i = 0; i < sequenceArray.Length; i++)
+            {
+                sequenceArray[i] = i + i;
+            }
+            return sequenceArray;
         }
 
-        public string PrintNumbers(int[] how_many)
+        public string PrintNumbers(int[] howMany)
         {
             throw new NotImplementedException();
         }

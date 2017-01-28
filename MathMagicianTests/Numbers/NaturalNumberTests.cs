@@ -31,5 +31,26 @@ namespace MathMagicianTests.Numbers
             //Assert (Check the output from your method)
             Assert.AreEqual(expectedResult, actualResult);
         }
+        [TestMethod]
+        public void EnsureTwoIsNextNumber()
+        {
+            NaturalNumber naturalNumber = new NaturalNumber();
+
+            int expectedResult = 4;
+            int actualResult = naturalNumber.GetNext(3);
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestMethod]
+        public void EnsureNumberSequence()
+        {
+            NaturalNumber naturalNumber = new NaturalNumber();
+
+            int expectedResult = 4;
+            int actualResult = naturalNumber.GetSequence();
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
     }
 }
