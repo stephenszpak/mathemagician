@@ -34,23 +34,48 @@ namespace MathMagicianTests.Numbers
         [TestMethod]
         public void EnsureTwoIsNextNumber()
         {
+            //arrange
             NaturalNumber naturalNumber = new NaturalNumber();
 
+            //act
             int expectedResult = 4;
             int actualResult = naturalNumber.GetNext(3);
 
+
+            //assert
             Assert.AreEqual(expectedResult, actualResult);
         }
 
         [TestMethod]
         public void EnsureNumberSequence()
         {
+            //arrange
             NaturalNumber naturalNumber = new NaturalNumber();
 
-            int expectedResult = 4;
-            int actualResult = naturalNumber.GetSequence();
+            //act
+            int[] expectedResult = { 1, 2, 3, 4, 5, 6 };
+            int[] actualResult = naturalNumber.GetSequence(6);
 
+            //assert
+            Assert.AreEqual(expectedResult.Length, actualResult.Length);
+            CollectionAssert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestMethod]
+        public void EnsurePrintToConsole()
+        {
+            //arrange
+            NaturalNumber naturalNumber = new NaturalNumber();
+
+            //act
+            string expectedResult = "1 2 3 4 5";
+            int[] inputArray = new[] { 1, 2, 3, 4, 5 };
+            string actualResult = naturalNumber.PrintNumbers(inputArray);
+            //string actualResult = naturalNumber.PrintNumbers(new[] { 1, 2, 3, 4, 5 });
+
+            //assert
             Assert.AreEqual(expectedResult, actualResult);
+            
         }
     }
 }
