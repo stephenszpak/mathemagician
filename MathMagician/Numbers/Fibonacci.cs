@@ -8,6 +8,10 @@ namespace MathMagician.Numbers
 {
     public class Fibonacci : NaturalNumber
     {
+        public int GetNext(int currentNum, int previousNum)
+        {
+            return currentNum = currentNum + previousNum;
+        }
 
         public override int[] GetSequence(int how_many)
         {

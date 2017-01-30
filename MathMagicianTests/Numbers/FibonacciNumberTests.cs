@@ -20,6 +20,28 @@ namespace MathMagicianTests.Numbers
         }
 
         [TestMethod]
+        public void EnsureOneIsTheFirstNumber()
+        {
+            Fibonacci fibNumber = new Fibonacci();
+
+            int expectedResult = 1;
+            int actualResult = fibNumber.GetFirst();
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestMethod]
+        public void EnsureNextNumberPrints()
+        {
+            Fibonacci fibNumber = new Fibonacci();
+
+            int expectedResult =  5;
+            int actualResult = fibNumber.GetNext(3);
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestMethod]
         public void EnsureFibonacciSequence()
         {
             Fibonacci fibSequence = new Fibonacci();
@@ -29,6 +51,18 @@ namespace MathMagicianTests.Numbers
 
             Assert.AreEqual(expectedResult.Length, actualResult.Length);
             CollectionAssert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestMethod]
+        public void EnsurePrintToConsole()
+        {
+            Fibonacci fibNumber = new Fibonacci();
+
+            string expectedResult = "1 3 5 7 9";
+            int[] inputArray = new[] { 1, 3, 5, 7, 9 };
+            string actualResult = fibNumber.PrintNumbers(inputArray);
+
+            Assert.AreEqual(expectedResult, actualResult);
         }
     }
 }
