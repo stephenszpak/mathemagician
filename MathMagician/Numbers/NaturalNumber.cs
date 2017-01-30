@@ -24,14 +24,14 @@ namespace MathMagician.Numbers
             return First;
         }
 
-        public int GetNext(int current)
+        public virtual int GetNext(int current)
         {
             //'current' argument is read-only
         
             return current + Step;
         }
 
-        public int[] GetSequence(int howMany)
+        public virtual int[] GetSequence(int howMany)
         {
             int[] sequenceArray = new int[howMany];
             sequenceArray[0] = GetFirst(); // i = 1

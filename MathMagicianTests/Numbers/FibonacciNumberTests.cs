@@ -18,5 +18,17 @@ namespace MathMagicianTests.Numbers
 
             Assert.IsNotNull(fibNumber);
         }
+
+        [TestMethod]
+        public void EnsureFibonacciSequence()
+        {
+            Fibonacci fibSequence = new Fibonacci();
+
+            int[] expectedResult = { 1, 1, 2, 3, 5, 8, 13, 21 };
+            int[] actualResult = fibSequence.GetSequence(8);
+
+            Assert.AreEqual(expectedResult.Length, actualResult.Length);
+            CollectionAssert.AreEqual(expectedResult, actualResult);
+        }
     }
 }
