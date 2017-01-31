@@ -8,20 +8,15 @@ namespace MathMagician.Numbers
 {
     public class Fibonacci : NaturalNumber
     {
-        public int GetNext(int currentNum, int previousNum)
+        public override int[] GetSequence(int howMany)
         {
-            return currentNum = currentNum + previousNum;
-        }
-
-        public override int[] GetSequence(int how_many)
-        {
-            int[] fibSequence = new int[how_many];
+            int[] fibSequence = new int[howMany];
             fibSequence[0] = GetFirst();
-            if (how_many >= 2)
+            if (howMany >= 2)
             {
                 fibSequence[1] = 1;
             }
-            for (int i = 2; i < how_many; i++)
+            for (int i = 2; i < howMany; i++)
             {
                 fibSequence[i] = fibSequence[i - 1] + fibSequence[i - 2];
             }

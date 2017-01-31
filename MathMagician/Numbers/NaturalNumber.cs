@@ -12,6 +12,7 @@ namespace MathMagician.Numbers
         protected int First { get; set; }
         protected int Step { get; set; }
 
+
         //constructors do not have return types and have to be public
         public NaturalNumber()
         {
@@ -24,7 +25,7 @@ namespace MathMagician.Numbers
             return First;
         }
 
-        public virtual int GetNext(int current)
+        public int GetNext(int current)
         {
             //'current' argument is read-only
         
